@@ -1,2 +1,2 @@
 # projeto-integrador
-Projeto integrador
+Software de gerenciamento de poupança.
