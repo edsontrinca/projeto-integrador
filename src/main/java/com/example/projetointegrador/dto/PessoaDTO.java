@@ -1,4 +1,5 @@
-package DTO;
+
+package com.example.projetointegrador.dto;
 
 import com.example.projetointegrador.models.Carteira;
 import com.example.projetointegrador.models.Documento;

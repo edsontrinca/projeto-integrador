@@ -9,18 +9,21 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "carteira")//nome da tabela
 public class Carteira {
     @Id //id da tabela
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id_carteira")
     private Long id;
+
     @Column(name = "nome")
     private String nome;
+
     @Column(name = "saldoAtual")
     private Double saldoAtual;
+
     @Column(name = "dataInicioInvestimento")
     private Date dataInicioInvestimento;
+
     @Column(name = "dataTerminoInvestimento")
     private Date dataTerminoInvestimento;
 

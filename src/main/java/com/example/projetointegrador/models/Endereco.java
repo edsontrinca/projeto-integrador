@@ -12,15 +12,19 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "Endereco")
 public class Endereco {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Logradouro")
+    @Column(name = "id_endereco")
+    private Long id;
+
+    @Column(name = "logradouro")
     private String logradouro;
-    @Column(name = "NumeroCasa")
+
+    @Column(name = "numeroCasa")
     private String numeroCasa;
-    @Column(name = "Referencia")
+    @Column(name = "referencia")
     private String referencia;
 
 }
