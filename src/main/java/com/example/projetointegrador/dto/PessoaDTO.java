@@ -7,11 +7,10 @@ import com.example.projetointegrador.models.Endereco;
 
 import lombok.Data;
 
-
+@Data //traz todos os getter and setters por meio do lombok
 public class PessoaDTO {
-    @Data //traz todos os getter and setters por meio do lombok
 
-    public class Pessoa {
+        private Long id;
         private String nome;
         private Documento documento;
         private Endereco endereco;
@@ -21,6 +20,4 @@ public class PessoaDTO {
         private String estadoCivil;
         private String dependentes;
         private Carteira carteira;
-
-    }
 }

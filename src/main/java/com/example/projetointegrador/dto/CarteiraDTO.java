@@ -4,10 +4,9 @@ import lombok.Data;
 
 import java.util.Date;
 
-public class CarteiraDTO {
+@Data
 
-    @Data
-    public class Carteira {
+public class CarteiraDTO {
 
         private Long id;
         private String nome;
@@ -15,4 +14,4 @@ public class CarteiraDTO {
         private Date dataInicioInvestimento;
         private Date dataTerminoInvestimento;
     }
-}
+

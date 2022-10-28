@@ -1,14 +1,12 @@
 package com.example.projetointegrador.dto;
 
 import lombok.Data;
+@Data
 
 public class EnderecoDTO {
 
-    @Data
-
-    public class Endereco {
+        private Long id;
         private String logradouro;
         private String numeroCasa;
         private String referencia;
     }
-}
