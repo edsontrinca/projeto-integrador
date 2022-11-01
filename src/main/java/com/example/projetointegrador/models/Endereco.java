@@ -7,14 +7,15 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Data
 @Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "endereco")
 public class Endereco {
 
-    @Id
+    @Id //id da tabela
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_endereco")
     private Long id;
@@ -24,6 +25,7 @@ public class Endereco {
 
     @Column(name = "numeroCasa")
     private String numeroCasa;
+
     @Column(name = "referencia")
     private String referencia;
 

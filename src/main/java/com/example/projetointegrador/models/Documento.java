@@ -12,15 +12,21 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "documento")
 public class Documento {
-    @Id
+
+    @Id //id da tabela
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_documento")
     private Long id;
+
     @Column(name = "cpf")
     private String cpf;
+
     @Column(name = "cnpj")
     private String cnpj;
+
     @Column(name = "identidade")
     private String identidade;
+
 }
