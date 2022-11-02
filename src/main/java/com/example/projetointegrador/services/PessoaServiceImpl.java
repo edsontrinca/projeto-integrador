@@ -1,6 +1,4 @@
 package com.example.projetointegrador.services;
-
-import com.example.projetointegrador.dto.PessoaDTO;
 import com.example.projetointegrador.models.Pessoa;
 import com.example.projetointegrador.repositories.PessoaRepository;
 import org.springframework.stereotype.Service;
@@ -8,20 +6,25 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PessoaServiceImpl {
-    final PessoaRepository pessoaRepository;//realiza as consutas e incerções no banco
+public class PessoaServiceImpl implements PessoaService {
+    final PessoaRepository pessoaRepository;
 
     public PessoaServiceImpl(PessoaRepository pessoaRepository) {
+
         this.pessoaRepository = pessoaRepository;
     }
-
-    public Pessoa salvarPessoa(Pessoa pessoa){
-        Pessoa pessoa1 = pessoaRepository.save(pessoa);
-        return pessoa1;
-    }
-
-    public List<Pessoa> buscarPessoa(){
+    @Override
+    public List<Pessoa> listar() {
         return pessoaRepository.findAll();
     }
 
+    @Override
+    public Pessoa editar(Pessoa pessoa) {
+        return pessoaRepository.save(pessoa);
+    }
+
+    @Override
+    public Pessoa salvar (Pessoa pessoa) {
+        return pessoaRepository.save(pessoa);
+    }
 }
