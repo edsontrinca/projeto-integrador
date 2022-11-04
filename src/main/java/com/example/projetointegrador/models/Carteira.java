@@ -10,7 +10,9 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "carteira")//nome da tabela
 public class Carteira {
+
     @Id //id da tabela
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_carteira")
@@ -27,5 +29,8 @@ public class Carteira {
 
     @Column(name = "dataTerminoInvestimento")
     private LocalDate dataTerminoInvestimento;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 37ebe0258c19dd93ed80cac805050b161da82707
 }

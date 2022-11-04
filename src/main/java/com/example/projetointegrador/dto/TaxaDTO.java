@@ -1,13 +1,13 @@
 package com.example.projetointegrador.dto;
 
 import lombok.Data;
-@Data
 
+@Data
 public class TaxaDTO {
 
-
     private Long id;
-    private String nome;
-    private Double porcentagem;
 
-    }
+    private String nome;
+
+    private Double porcentagem;
+}
