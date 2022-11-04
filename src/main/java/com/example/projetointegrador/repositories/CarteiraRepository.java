@@ -1,4 +1,7 @@
 package com.example.projetointegrador.repositories;
 
-public interface CarteiraRepository {
+import com.example.projetointegrador.models.Carteira;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CarteiraRepository extends JpaRepository<Carteira, Double> {
 }

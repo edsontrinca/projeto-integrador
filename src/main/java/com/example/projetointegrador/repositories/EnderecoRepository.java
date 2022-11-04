@@ -1,4 +1,7 @@
 package com.example.projetointegrador.repositories;
 
-public interface EnderecoRepository {
+import com.example.projetointegrador.models.Endereco;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EnderecoRepository extends JpaRepository<Endereco, Long> {
 }
