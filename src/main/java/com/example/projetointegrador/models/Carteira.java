@@ -1,10 +1,8 @@
 package com.example.projetointegrador.models;
-
 import lombok.*;
-
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
+
 @Entity //para criar a tabela
 @Data
 @NoArgsConstructor
@@ -29,8 +27,5 @@ public class Carteira {
 
     @Column(name = "dataTerminoInvestimento")
     private LocalDate dataTerminoInvestimento;
-<<<<<<< HEAD
 
-=======
->>>>>>> 37ebe0258c19dd93ed80cac805050b161da82707
 }

@@ -2,7 +2,6 @@ package com.example.projetointegrador.services;
 import com.example.projetointegrador.models.Pessoa;
 import com.example.projetointegrador.repositories.PessoaRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service

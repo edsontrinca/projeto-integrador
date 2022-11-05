@@ -23,19 +23,19 @@ public class CarteiraController {
 
     @PostMapping(value= "/salvarCarteira")
     public ResponseEntity<Object> salvarCarteira(@RequestBody Carteira carteira){
-        Carteira response =carteiraServiceImpl.salvar(carteira);
+        Carteira response =carteiraServiceImpl.salvarCarteira(carteira);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @GetMapping(value = "/buscarCarteira")
     public ResponseEntity<Object> buscarCarteira(){
-        List<Carteira> response = carteiraServiceImpl.listar();
+        List<Carteira> response = carteiraServiceImpl.buscarCarteira();
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @PutMapping(value = "/alterarCarteira")
-    public ResponseEntity<Object> altterarCarteira (@RequestBody Carteira carteira){
-        Carteira response = carteiraServiceImpl.editar(carteira);
+    public ResponseEntity<Object> alterarCarteira (@RequestBody Carteira carteira){
+        Carteira response = carteiraServiceImpl.alterarCarteira(carteira);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 

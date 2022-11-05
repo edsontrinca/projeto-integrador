@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 public class CarteiraServiceImpl implements CarteiraService {
-    final CarteiraService carteiraRepository;
+    final CarteiraRepository carteiraRepository;
 
     public CarteiraServiceImpl (CarteiraRepository carteiraRepository){
         this.carteiraRepository = carteiraRepository;
@@ -16,18 +16,18 @@ public class CarteiraServiceImpl implements CarteiraService {
 
     @Override
 
-    public List<Carteira> listar() {
+    public List<Carteira> buscarCarteira() {
         return carteiraRepository.findAll();
     }
 
     @Override
 
-    public Carteira editar(Carteira carteira) {
+    public Carteira alterarCarteira(Carteira carteira) {
         return carteiraRepository.save(carteira);
     }
 
     @Override
-    public Carteira salvar(Carteira carteira) {
+    public Carteira salvarCarteira(Carteira carteira) {
         return carteiraRepository.save(carteira);
     }
 }

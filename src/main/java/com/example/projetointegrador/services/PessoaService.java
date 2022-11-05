@@ -7,7 +7,7 @@ import java.util.List;
 public interface PessoaService {
     List<Pessoa> buscarPessoa();
 
-    Pessoa editar (Pessoa pessoa);
+    Pessoa editar(Pessoa pessoa);
 
     Pessoa salvarPessoa (Pessoa pessoa);
 

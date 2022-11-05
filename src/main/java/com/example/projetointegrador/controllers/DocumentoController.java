@@ -19,13 +19,13 @@ public class DocumentoController {
     }
     @PostMapping(value ="/salvarDocumento")
     public ResponseEntity<Object> salvarDocumento(@RequestBody Documento documento){
-        Documento response = documentoServiceImpl.salvar(documento);
+        Documento response = documentoServiceImpl.salvarDocumento(documento);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     @GetMapping(value = "/buscarDocumento")
     public ResponseEntity<Object> buscarDocumento(@RequestBody Documento documento){
-        List<Documento> response = documentoServiceImpl.listar();
+        List<Documento> response = documentoServiceImpl.buscarDocumento();
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 

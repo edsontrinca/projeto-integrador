@@ -5,10 +5,10 @@ import com.example.projetointegrador.models.Carteira;
 import java.util.List;
 
 public interface CarteiraService {
-    List<Carteira> listar();
+    List<Carteira> buscarCarteira();
 
-    Carteira editar(Carteira carteira);
+    Carteira alterarCarteira(Carteira carteira);
 
-    Carteira salvar(Carteira carteira);
+    Carteira salvarCarteira(Carteira carteira);
 
 }

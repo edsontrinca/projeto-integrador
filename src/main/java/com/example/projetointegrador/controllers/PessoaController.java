@@ -32,7 +32,7 @@ public class PessoaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    @PutMapping(value = "/alterarPessoa")
+    @PutMapping(value = "/editarPessoa")
     public ResponseEntity<Object> editarPessoa(@RequestBody Pessoa pessoa) {
         Pessoa response = pessoaServiceImpl.editar(pessoa);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
