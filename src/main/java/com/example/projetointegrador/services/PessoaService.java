@@ -11,4 +11,5 @@ public interface PessoaService {
 
     Pessoa salvarPessoa (Pessoa pessoa);
 
+    void deletar(Long id_pessoa);
 }

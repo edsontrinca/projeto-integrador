@@ -34,6 +34,13 @@ public class TaxaController {
         Taxa response = taxaServiceImpl.editarTaxa(taxa);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
+
+    @DeleteMapping(value = "/deletarTaxa")
+    public ResponseEntity<Object> deletarTaxa(Long id_taxa){
+        taxaServiceImpl.deletar(id_taxa);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+
+    }
 }
 
 

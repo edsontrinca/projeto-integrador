@@ -1,8 +1,7 @@
 package com.example.projetointegrador.controllers;
 
-import com.example.projetointegrador.dto.CarteiraDTO;
 import com.example.projetointegrador.models.Carteira;
-import com.example.projetointegrador.models.Pessoa;
+import com.example.projetointegrador.services.CarteiraService;
 import com.example.projetointegrador.services.CarteiraServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,6 +36,12 @@ public class CarteiraController {
     public ResponseEntity<Object> alterarCarteira (@RequestBody Carteira carteira){
         Carteira response = carteiraServiceImpl.alterarCarteira(carteira);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
+    }
+
+    @DeleteMapping(value = "/deletarCarteira")
+    public ResponseEntity<Object> deletarCarteira (Long id_carteira){
+        carteiraServiceImpl.deletar(id_carteira);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
 }

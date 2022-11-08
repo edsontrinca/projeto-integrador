@@ -12,4 +12,5 @@ public interface DocumentoService {
 
     Documento salvarDocumento (Documento documento);
 
+    void deletar(Long id_documento);
 }

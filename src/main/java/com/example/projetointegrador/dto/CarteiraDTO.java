@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class CarteiraDTO {
 
 
-        private Long id;
+        private Long id_carteira;
         private String nome;
         private Double saldoAtual;
         private LocalDate dataInicioInvestimento;

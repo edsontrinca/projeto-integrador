@@ -30,6 +30,11 @@ public class TaxaServiceImpl implements com.example.projetointegrador.services.T
         return taxaRepository.save(taxa);
     }
 
+    @Override
+    public void deletar(Long id_taxa){
+        taxaRepository.deleteById(id_taxa);
+    }
+
 }
 
 

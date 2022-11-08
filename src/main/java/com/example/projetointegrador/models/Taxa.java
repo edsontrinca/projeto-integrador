@@ -15,16 +15,10 @@ import javax.persistence.*;
 @Table(name = "taxa")
 public class Taxa {
 
-    @Id //id da tabela
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_taxa")
-    private Long id;
-
-//    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.PERSIST}, fetch = FetchType.LAZY)
-//    @JoinTable(name = "documento_taxa",
-//            joinColumns = @JoinColumn(name = "id_documento"),
-//            inverseJoinColumns = @JoinColumn(name="id_taxa"))
-//    private Documento documento;
+    private Long id_taxa;
 
     @Column(name = "nome")
     private String nome;

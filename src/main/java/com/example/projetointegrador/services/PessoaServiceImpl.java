@@ -26,4 +26,9 @@ public class PessoaServiceImpl implements com.example.projetointegrador.services
     public Pessoa salvarPessoa (Pessoa pessoa) {
         return pessoaRepository.save(pessoa);
     }
+
+    @Override
+    public void deletar(Long id_pessoa){
+        pessoaRepository.deleteById(id_pessoa);
+    }
 }

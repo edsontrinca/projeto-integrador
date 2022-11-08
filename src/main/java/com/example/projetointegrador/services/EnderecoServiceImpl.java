@@ -28,4 +28,9 @@ public class EnderecoServiceImpl implements com.example.projetointegrador.servic
     public Endereco salvarEndereco(Endereco endereco) {
         return enderecoRepository.save(endereco);
     }
+
+    @Override
+    public void deletar(Long id_endereco){
+        enderecoRepository.deleteById(id_endereco);
+    }
 }
