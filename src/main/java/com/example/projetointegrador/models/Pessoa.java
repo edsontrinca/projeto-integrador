@@ -6,16 +6,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
-// o @ significa que é uma anotation
+
 @Entity
-@Data //traz todos os getter and setters por meio do lombok
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Table(name ="pessoa")
 public class Pessoa {
 
-    @Id //id da tabela
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pessoa")
     private Long id_pessoa;
