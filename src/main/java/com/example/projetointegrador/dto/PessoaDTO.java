@@ -1,5 +1,4 @@
 package com.example.projetointegrador.dto;
-
 import com.example.projetointegrador.models.Carteira;
 import com.example.projetointegrador.models.Documento;
 import com.example.projetointegrador.models.Endereco;

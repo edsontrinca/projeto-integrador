@@ -1,7 +1,5 @@
 package com.example.projetointegrador.services;
-
 import com.example.projetointegrador.models.Carteira;
-
 import java.util.List;
 
 public interface CarteiraService {

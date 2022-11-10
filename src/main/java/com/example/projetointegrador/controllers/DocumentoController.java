@@ -1,11 +1,9 @@
 package com.example.projetointegrador.controllers;
-
 import com.example.projetointegrador.models.Documento;
 import com.example.projetointegrador.services.DocumentoServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

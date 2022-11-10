@@ -1,5 +1,4 @@
 package com.example.projetointegrador.models;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

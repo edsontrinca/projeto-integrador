@@ -3,15 +3,15 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity //para criar a tabela
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "carteira")//nome da tabela
+@Table(name = "carteira")
 public class Carteira {
 
-    @Id //id da tabela
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_carteira")
     private Long id_carteira;
