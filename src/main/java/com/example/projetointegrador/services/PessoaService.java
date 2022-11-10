@@ -9,7 +9,7 @@ public interface PessoaService {
 
     Pessoa editar(Pessoa pessoa);
 
-    Pessoa salvarPessoa (Pessoa pessoa);
+    Pessoa salvarPessoa (Pessoa pessoa) throws Exception;
 
     void deletar(Long id_pessoa);
 }

@@ -26,7 +26,13 @@ public class TaxaServiceImpl implements com.example.projetointegrador.services.T
     }
 
     @Override
-    public Taxa salvarTaxa (Taxa taxa) {
+    public Taxa salvarTaxa (Taxa taxa) throws Exception {
+        List<Taxa> listaDeTaxa = taxaRepository.findAll();
+        for (Taxa taxa1: listaDeTaxa) {
+            if (taxa.getNome().equals(taxa1.getNome())) {
+                throw new Exception("Essa Taxa já esta cadastrada!");
+            }
+        }
         return taxaRepository.save(taxa);
     }
 

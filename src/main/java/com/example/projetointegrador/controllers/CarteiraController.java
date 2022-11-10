@@ -21,7 +21,7 @@ public class CarteiraController {
     }
 
     @PostMapping(value= "/salvarCarteira")
-    public ResponseEntity<Object> salvarCarteira(@RequestBody Carteira carteira){
+    public ResponseEntity<Object> salvarCarteira(@RequestBody Carteira carteira) throws Exception {
         Carteira response =carteiraServiceImpl.salvarCarteira(carteira);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

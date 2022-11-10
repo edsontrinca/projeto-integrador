@@ -12,16 +12,16 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api")
 @CrossOrigin
-public class PessoaController {
+public class PessoaController  {
     final PessoaServiceImpl pessoaServiceImpl;
 
-    public PessoaController(PessoaServiceImpl pessoaService) {
+    public PessoaController(PessoaServiceImpl pessoaService) throws Exception {
         this.pessoaServiceImpl = pessoaService;
     }
 
 
     @PostMapping(value = "/salvarPessoa")
-    public ResponseEntity<Object> salvarPessoa(@RequestBody Pessoa pessoa) {
+    public ResponseEntity<Object> salvarPessoa(@RequestBody Pessoa pessoa) throws Exception {
         Pessoa response = pessoaServiceImpl.salvarPessoa(pessoa);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

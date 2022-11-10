@@ -1,9 +1,7 @@
 package com.example.projetointegrador.services;
-
 import com.example.projetointegrador.models.Endereco;
 import com.example.projetointegrador.repositories.EnderecoRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 @Service
 
@@ -25,9 +23,16 @@ public class EnderecoServiceImpl implements com.example.projetointegrador.servic
     }
 
     @Override
-    public Endereco salvarEndereco(Endereco endereco) {
+    public Endereco salvarEndereco(Endereco endereco) throws Exception {
+        List<Endereco> listaDeEndereco = enderecoRepository.findAll();
+        for (Endereco endereco1: listaDeEndereco) {
+            if (endereco.getLogradouro().equals(endereco1.getLogradouro())) {
+                throw new Exception("Esse Logradouro já esta cadastrado!");
+            }
+        }
         return enderecoRepository.save(endereco);
     }
+
 
     @Override
     public void deletar(Long id_endereco){

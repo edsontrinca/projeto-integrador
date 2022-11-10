@@ -4,8 +4,9 @@ import com.example.projetointegrador.repositories.DocumentoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
-    @Service
+@Service
     public class DocumentoServiceImpl implements com.example.projetointegrador.services.DocumentoService {
         final DocumentoRepository documentoRepository;
 
@@ -26,7 +27,13 @@ import java.util.List;
 
 
         @Override
-        public Documento salvarDocumento(Documento documento) {
+        public Documento salvarDocumento(Documento documento) throws Exception {
+            List<Documento> listaDeDocumento = documentoRepository.findAll();
+            for (Documento documento1: listaDeDocumento) {
+                if (Objects.equals(documento.getCpf(),documento.getCnpj().equals(documento1.getCnpj()))) {
+                    throw new Exception("Esse documento já esta cadastrado!");
+                }
+            }
             return documentoRepository.save(documento);
         }
 

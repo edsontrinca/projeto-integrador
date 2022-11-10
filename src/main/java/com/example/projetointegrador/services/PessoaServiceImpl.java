@@ -23,7 +23,13 @@ public class PessoaServiceImpl implements com.example.projetointegrador.services
     }
 
     @Override
-    public Pessoa salvarPessoa (Pessoa pessoa) {
+    public Pessoa salvarPessoa (Pessoa pessoa) throws Exception {
+        List<Pessoa> listaDePessoa = pessoaRepository.findAll();
+        for (Pessoa pessoa1: listaDePessoa) {
+            if (pessoa.getNome().equals(pessoa1.getNome())) {
+                throw new Exception("Esse nome já esta cadastrado!");
+            }
+        }
         return pessoaRepository.save(pessoa);
     }
 

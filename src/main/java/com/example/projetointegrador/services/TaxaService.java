@@ -9,7 +9,7 @@ public interface TaxaService {
 
     Taxa editarTaxa(Taxa taxa);
 
-    Taxa salvarTaxa (Taxa taxa);
+    Taxa salvarTaxa (Taxa taxa) throws Exception;
 
     void deletar(Long id_taxa);
 

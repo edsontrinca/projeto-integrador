@@ -11,7 +11,7 @@ public interface EnderecoService {
 
     Endereco editar(Endereco endereco);
 
-    Endereco salvarEndereco(Endereco endereco);
+    Endereco salvarEndereco(Endereco endereco) throws Exception;
 
     void deletar(Long id_endereco);
 }
