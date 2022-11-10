@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
+import javax.print.attribute.standard.MediaSize;
 
 @Entity
 @Data
@@ -26,5 +27,8 @@ public class Endereco {
 
     @Column(name = "referencia")
     private String referencia;
+
+    @Column(name = "cep")
+    private String cep;
 
 }

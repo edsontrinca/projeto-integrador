@@ -26,8 +26,8 @@ public class EnderecoServiceImpl implements com.example.projetointegrador.servic
     public Endereco salvarEndereco(Endereco endereco) throws Exception {
         List<Endereco> listaDeEndereco = enderecoRepository.findAll();
         for (Endereco endereco1: listaDeEndereco) {
-            if (endereco.getLogradouro().equals(endereco1.getLogradouro())) {
-                throw new Exception("Esse Logradouro já esta cadastrado!");
+            if (endereco.getCep().equals(endereco1.getCep())) {
+                throw new Exception("Esse CEP já esta cadastrado!");
             }
         }
         return enderecoRepository.save(endereco);
