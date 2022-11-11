@@ -29,8 +29,9 @@ public class PessoaServiceImpl implements com.example.projetointegrador.services
             if (pessoa.getNome().equals(pessoa1.getNome())) {
                 throw new Exception("Esse nome já esta cadastrado!");
             }
-        }
-        return pessoaRepository.save(pessoa);
+
+       }
+       return pessoaRepository.save(pessoa);
     }
 
     @Override

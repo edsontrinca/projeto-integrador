@@ -44,7 +44,7 @@ public class Pessoa {
     private Carteira carteira;
 
     @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.PERSIST}, fetch = FetchType.LAZY)
-    @JoinTable(name = "documento_pessoa",
+    @JoinTable(name = "pessoa_documento",
             joinColumns = @JoinColumn(name = "id_documento"),
             inverseJoinColumns = @JoinColumn(name="id_pessoa"))
     private Documento documento;
