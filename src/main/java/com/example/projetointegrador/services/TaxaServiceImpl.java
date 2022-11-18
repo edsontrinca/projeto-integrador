@@ -1,4 +1,5 @@
 package com.example.projetointegrador.services;
+import com.example.projetointegrador.exceptions.EntityNotFoundException;
 import com.example.projetointegrador.models.Taxa;
 import com.example.projetointegrador.repositories.TaxaRepository;
 import org.springframework.stereotype.Service;
@@ -27,13 +28,17 @@ public class TaxaServiceImpl implements com.example.projetointegrador.services.T
     @Override
     public Taxa salvarTaxa (Taxa taxa) throws Exception {
         List<Taxa> listaDeTaxa = taxaRepository.findAll();
-        for (Taxa taxa1: listaDeTaxa) {
-            if (taxa.getNome().equals(taxa1.getNome())) {
-                throw new Exception("Essa Taxa já esta cadastrada!");
+        for (Taxa infoTaxa: listaDeTaxa) {
+            if (taxa.getNome().equals(infoTaxa.getNome())) {
+                throw new EntityNotFoundException("Essa Taxa já está cadastrada!");
+            }
+            if (taxa.getPorcentagem().equals(infoTaxa.getPorcentagem())){
+                throw new EntityNotFoundException("Essa porcentagem já está cadastrada! ");
             }
         }
         return taxaRepository.save(taxa);
     }
+
 
     @Override
     public void deletar(Long id_taxa){

@@ -1,4 +1,5 @@
 package com.example.projetointegrador.services;
+import com.example.projetointegrador.exceptions.EntityNotFoundException;
 import com.example.projetointegrador.models.Carteira;
 import com.example.projetointegrador.repositories.CarteiraRepository;
 import org.springframework.stereotype.Service;
@@ -29,7 +30,7 @@ public class CarteiraServiceImpl implements CarteiraService {
         List<Carteira> listaDeCarteira = carteiraRepository.findAll();
         for (Carteira carteira1: listaDeCarteira) {
             if (carteira.getNome().equals(carteira1.getNome())) {
-                throw new Exception("Esse nome já esta cadastrado!");
+                throw new EntityNotFoundException("Esse nome já esta cadastrado!");
             }
         }
         return carteiraRepository.save(carteira);

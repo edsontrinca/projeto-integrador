@@ -10,4 +10,6 @@ public interface PessoaService {
     Pessoa salvarPessoa (Pessoa pessoa) throws Exception;
 
     void deletar(Long id_pessoa);
+
+    void adicionarTaxa();
 }
