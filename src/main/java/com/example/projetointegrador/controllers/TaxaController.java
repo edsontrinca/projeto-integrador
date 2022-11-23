@@ -9,11 +9,12 @@ import java.util.List;
 @RestController
 @RequestMapping(value="/api")
 @CrossOrigin
+
 public class TaxaController {
 
     final TaxaServiceImpl taxaServiceImpl;
 
-    public TaxaController(TaxaServiceImpl taxaService) {
+    public TaxaController(TaxaServiceImpl taxaService) throws Exception{
         this.taxaServiceImpl = taxaService;
     }
     @PostMapping(value = "/salvarTaxa")
@@ -22,9 +23,12 @@ public class TaxaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
 
     }
-
+// @GetMapping(value = "/buscarPessoa")
+//    public ResponseEntity<Object> buscarPessoa() {
+//        List<Pessoa> response = pessoaServiceImpl.buscarPessoa();
+//        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     @GetMapping(value = "/buscarTaxa")
-    public ResponseEntity<Object>buscarTaxa(@RequestBody Taxa taxa) {
+    public ResponseEntity<Object>buscarTaxa() {
         List<Taxa> response = taxaServiceImpl.buscarTaxa();
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
