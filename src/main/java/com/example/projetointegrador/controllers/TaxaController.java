@@ -1,4 +1,5 @@
 package com.example.projetointegrador.controllers;
+import com.example.projetointegrador.dto.TaxaDTO;
 import com.example.projetointegrador.models.Taxa;
 import com.example.projetointegrador.services.TaxaServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -18,15 +19,12 @@ public class TaxaController {
         this.taxaServiceImpl = taxaService;
     }
     @PostMapping(value = "/salvarTaxa")
-    public ResponseEntity<Object>salvarTaxa(@RequestBody Taxa taxa) throws Exception {
-        Taxa response = taxaServiceImpl.salvarTaxa(taxa);
+    public ResponseEntity<Object>salvarTaxa(@RequestBody TaxaDTO taxaDTO) throws Exception {
+        Taxa response = taxaServiceImpl.salvarTaxa(taxaDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
 
     }
-// @GetMapping(value = "/buscarPessoa")
-//    public ResponseEntity<Object> buscarPessoa() {
-//        List<Pessoa> response = pessoaServiceImpl.buscarPessoa();
-//        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+
     @GetMapping(value = "/buscarTaxa")
     public ResponseEntity<Object>buscarTaxa() {
         List<Taxa> response = taxaServiceImpl.buscarTaxa();
