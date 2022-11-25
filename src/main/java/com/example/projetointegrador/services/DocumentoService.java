@@ -1,4 +1,5 @@
 package com.example.projetointegrador.services;
+import com.example.projetointegrador.dto.DocumentoDTO;
 import com.example.projetointegrador.models.Documento;
 import java.util.List;
 
@@ -6,9 +7,9 @@ public interface DocumentoService {
 
     List<Documento> buscarDocumento();
 
-    Documento editar (Documento documento);
+    Documento editar (DocumentoDTO documentoDTO);
 
-    Documento salvarDocumento (Documento documento) throws Exception;
+    Documento salvarDocumento (DocumentoDTO documentoDTO) throws Exception;
 
     void deletar(Long id_documento);
 }

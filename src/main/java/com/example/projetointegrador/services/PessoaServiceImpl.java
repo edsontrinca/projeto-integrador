@@ -1,4 +1,5 @@
 package com.example.projetointegrador.services;
+import com.example.projetointegrador.dto.PessoaDTO;
 import com.example.projetointegrador.exceptions.EntityNotFoundException;
 import com.example.projetointegrador.models.Pessoa;
 import com.example.projetointegrador.repositories.PessoaRepository;
@@ -19,29 +20,57 @@ public class PessoaServiceImpl implements com.example.projetointegrador.services
     }
 
     @Override
-    public Pessoa editar(Pessoa pessoa) {
+    public Pessoa editar(PessoaDTO pessoaDTO) {
+
+            Pessoa pessoa = Pessoa.builder()
+                .nome(pessoaDTO.getNome())
+                .dependentes(pessoaDTO.getDependentes())
+                .idade(pessoaDTO.getIdade())
+                .estadoCivil(pessoaDTO.getEstadoCivil())
+                .genero(pessoaDTO.getGenero())
+                .rendimentoMensal(pessoaDTO.getRendimentoMensal())
+                .documento(pessoaDTO.getDocumento())
+                .carteira(pessoaDTO.getCarteira())
+                .endereco(pessoaDTO.getEndereco())
+                .taxa(pessoaDTO.getTaxa())
+                .build();
         return pessoaRepository.save(pessoa);
     }
 
     @Override
-    public Pessoa salvarPessoa (Pessoa pessoa) throws Exception {
+    public Pessoa salvarPessoa (PessoaDTO pessoaDTO) throws Exception {
         List<Pessoa> listaDePessoa = pessoaRepository.findAll();
         for (Pessoa informacaoPessoa: listaDePessoa) {
-            if (pessoa.getNome().equals(informacaoPessoa.getNome())) {
+            if (pessoaDTO.getNome().equals(informacaoPessoa.getNome())) {
                 throw new EntityNotFoundException("Esse nome já esta cadastrado!");
             }
-            if(pessoa.getDocumento().getCpf().equals(informacaoPessoa.getDocumento().getCpf())) {
+            if(pessoaDTO.getDocumento().getCpf().equals(informacaoPessoa.getDocumento().getCpf())) {
                 throw new EntityNotFoundException(" Estes CPF já esta cadastrado, tente outro! ");
             }
 
-            if (pessoa.getDocumento().getIdentidade().equals(informacaoPessoa.getDocumento().getIdentidade())){
+            if (pessoaDTO.getDocumento().getIdentidade().equals(informacaoPessoa.getDocumento().getIdentidade())){
                 throw new EntityNotFoundException(" Essa identidade já está cadastrada, tente outra! ");
             }
 
-            if (pessoa.getEndereco().getNumeroCasa().equals(informacaoPessoa.getEndereco().getNumeroCasa())){
+            if (pessoaDTO.getEndereco().getNumeroCasa().equals(informacaoPessoa.getEndereco().getNumeroCasa())){
                 throw new EntityNotFoundException(" Esse número já está cadastrado, tente outro! ");
             }
+
+
        }
+
+        Pessoa pessoa = Pessoa.builder()
+                .nome(pessoaDTO.getNome())
+                .dependentes(pessoaDTO.getDependentes())
+                .idade(pessoaDTO.getIdade())
+                .estadoCivil(pessoaDTO.getEstadoCivil())
+                .genero(pessoaDTO.getGenero())
+                .rendimentoMensal(pessoaDTO.getRendimentoMensal())
+                .documento(pessoaDTO.getDocumento())
+                .carteira(pessoaDTO.getCarteira())
+                .endereco(pessoaDTO.getEndereco())
+                .taxa(pessoaDTO.getTaxa())
+                .build();
 
        return pessoaRepository.save(pessoa);
     }

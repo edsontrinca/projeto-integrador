@@ -7,9 +7,13 @@ public class CarteiraDTO {
 
 
         private Long id_carteira;
+
         private String nome;
+
         private Double saldoAtual;
+
         private LocalDate dataInicioInvestimento;
+
         private LocalDate dataTerminoInvestimento;
 
 }

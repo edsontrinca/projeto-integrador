@@ -6,7 +6,7 @@ import java.util.List;
 public interface TaxaService {
     List<Taxa> buscarTaxa();
 
-    Taxa editarTaxa(Taxa taxa);
+    Taxa editarTaxa(TaxaDTO taxaDTO);
 
     Taxa salvarTaxa (TaxaDTO taxaDTO) throws Exception;
 

@@ -1,4 +1,5 @@
 package com.example.projetointegrador.services;
+import com.example.projetointegrador.dto.EnderecoDTO;
 import com.example.projetointegrador.exceptions.EntityNotFoundException;
 import com.example.projetointegrador.models.Endereco;
 import com.example.projetointegrador.repositories.EnderecoRepository;
@@ -19,19 +20,39 @@ public class EnderecoServiceImpl implements com.example.projetointegrador.servic
     }
 
     @Override
-    public Endereco editar(Endereco endereco) {
+    public Endereco editar(EnderecoDTO enderecoDTO) {
+
+        Endereco endereco = Endereco.builder()
+                .logradouro(enderecoDTO.getLogradouro())
+                .numeroCasa(enderecoDTO.getNumeroCasa())
+                .referencia(enderecoDTO.getReferencia())
+                .cep(enderecoDTO.getCep())
+                .bairro(enderecoDTO.getBairro())
+                .build();
+
         return enderecoRepository.save(endereco);
     }
 
     @Override
-    public Endereco salvarEndereco(Endereco endereco) throws Exception {
+    public Endereco salvarEndereco(EnderecoDTO enderecoDTO) throws Exception {
         List<Endereco> listaDeEndereco = enderecoRepository.findAll();
         for (Endereco endereco1: listaDeEndereco) {
-            if (endereco.getNumeroCasa().equals(endereco1.getNumeroCasa())) {
+            if (enderecoDTO.getNumeroCasa().equals(endereco1.getNumeroCasa())) {
                 throw new EntityNotFoundException("Esse Número já esta cadastrado!");
             }
 
         }
+
+        Endereco endereco = Endereco.builder()
+                .logradouro(enderecoDTO.getLogradouro())
+                .numeroCasa(enderecoDTO.getNumeroCasa())
+                .referencia(enderecoDTO.getReferencia())
+                .cep(enderecoDTO.getCep())
+                .bairro(enderecoDTO.getBairro())
+                .build();
+
+
+
         return enderecoRepository.save(endereco);
     }
 

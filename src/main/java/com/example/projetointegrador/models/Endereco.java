@@ -28,6 +28,9 @@ public class Endereco {
     @Column(name = "referencia")
     private String referencia;
 
+    @Column(name = "bairro")
+    private String bairro;
+
     @Column(name = "cep")
     private String cep;
 

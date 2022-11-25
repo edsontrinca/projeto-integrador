@@ -4,7 +4,7 @@ import com.example.projetointegrador.exceptions.EntityNotFoundException;
 import com.example.projetointegrador.models.Taxa;
 import com.example.projetointegrador.repositories.TaxaRepository;
 import org.springframework.stereotype.Service;
-import java.math.BigDecimal;
+
 import java.util.List;
 @Service
 
@@ -23,7 +23,12 @@ public class TaxaServiceImpl implements com.example.projetointegrador.services.T
     }
 
     @Override
-    public Taxa editarTaxa(Taxa taxa) {
+    public Taxa editarTaxa(TaxaDTO taxaDTO) {
+        Taxa taxa= Taxa.builder()
+                .nome(taxaDTO.getNome())
+                .porcentagem(taxaDTO.getPorcentagem() != null ? taxaDTO.getPorcentagem() : null)
+                .build();
+
         return taxaRepository.save(taxa);
     }
 
