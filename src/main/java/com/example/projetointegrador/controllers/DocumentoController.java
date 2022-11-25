@@ -1,4 +1,5 @@
 package com.example.projetointegrador.controllers;
+import com.example.projetointegrador.dto.DocumentoDTO;
 import com.example.projetointegrador.models.Documento;
 import com.example.projetointegrador.services.DocumentoServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -16,7 +17,7 @@ public class DocumentoController {
     this.documentoServiceImpl = documentoService;
     }
     @PostMapping(value ="/salvarDocumento")
-    public ResponseEntity<Object> salvarDocumento(@RequestBody Documento documento) throws Exception {
+    public ResponseEntity<Object> salvarDocumento(@RequestBody DocumentoDTO documento) throws Exception {
         Documento response = documentoServiceImpl.salvarDocumento(documento);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
@@ -28,7 +29,7 @@ public class DocumentoController {
     }
 
     @PutMapping(value = "/alterarDocumento")
-    public ResponseEntity<Object> alterarDocumento(@RequestBody Documento documento){
+    public ResponseEntity<Object> alterarDocumento(@RequestBody DocumentoDTO documento){
         Documento response = documentoServiceImpl.editar(documento);
         return  ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

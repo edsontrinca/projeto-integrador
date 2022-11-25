@@ -32,7 +32,7 @@ public class TaxaController {
     }
 
     @PutMapping(value = "/editarTaxa")
-    public ResponseEntity<Object> editarTaxa(@RequestBody Taxa taxa) {
+    public ResponseEntity<Object> editarTaxa(@RequestBody TaxaDTO taxa) {
         Taxa response = taxaServiceImpl.editarTaxa(taxa);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
