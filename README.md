@@ -34,4 +34,4 @@ funcionalidades
 
 [x] Buscar todas as taxas existentes no banco de dados;
 
-[x] Almentar o saldo de todos os clientes de acordo com porcentagem da taxax registrada no cliente.
+[x] Aumentar o saldo de todos os clientes de acordo com porcentagem da taxas registradas no cliente.
